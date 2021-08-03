@@ -1,0 +1,19 @@
+<div id="wrapperMain">
+    <%- include('./layout/header.ejs', {user, currentUrl}) %>
+
+    <% if(user.login && user.id) { %>
+    <main id="add">
+        <div>
+            <h1>Adding post</h1>
+            <form id="createPost">
+                Title <input id="titlePost" type="text">
+                Body <textarea id="bodyPost"></textarea>
+                <button id="sendPost">Submit</button>
+            </form>
+        </div>
+    </main>
+    <% } %>
+    
+    <%- include('./layout/footer.ejs') %>
+</div>
+

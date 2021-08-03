@@ -1,0 +1,15 @@
+<% if(comments.length) {%>
+<ul>   
+    <%comments.forEach(item => {%>
+        <li id="<%= item._id%>">
+            <h4><a href="/posts/<%=item.owner.login %>"><%=item.owner.login %></a> <spam><%= moment(item.createdAt).fromNow() %></spam></h4>
+            <div class="postBottom">
+                <p><%= item.body %></p>
+                <% if(item.owner.login === user.login){ %>
+                    <button class="deleteComment">Delete</button>
+                <% } %>
+            </div>
+        </li>
+    <%})%>
+</ul>
+<% }%>

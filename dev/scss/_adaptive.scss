@@ -1,0 +1,38 @@
+@media (max-width: 1140px){
+    #wrapperMain{
+        max-width: 920px !important;
+    }
+}
+
+@media (max-width: 960px){
+    #wrapperMain{
+        max-width: 680px !important;
+    }
+}
+
+@media (max-width: 720px){
+    #wrapperMain{
+        max-width: 520px !important;
+        main{
+            flex-direction: column-reverse;
+            .post,
+            .comments li{
+                margin-right: 0;
+            }
+        }  
+        .Panels{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            div{
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 540px){
+    #wrapperMain{
+        max-width: 100% !important;
+    }
+}

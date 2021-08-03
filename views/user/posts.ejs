@@ -1,0 +1,67 @@
+<div id="wrapperMain">
+    <%- include('../layout/header.ejs', {user, currentUrl}) %>
+
+    <main>
+        <div class="content">
+            <h1><%= owner.login%> posts</h1>
+            <div class="posts">
+                <% if(Object.keys(posts).length === 0) { %>
+                    No posts
+                <% } else { %>
+                <%    posts.forEach(item => { %>
+                        <div class="post" id="<%= item._id%>">
+                            <h3><a href="/posts/<%=item.owner.login %>/<%=item.url%>"><%= item.title %></a></h3>
+                            <p><%=item.body %></p>
+                            <div class="postBottom">
+                                <h5>Author: <a href="/posts/<%=item.owner.login %>"><%=item.owner.login %></a></h5>
+                                <% if(item.owner.login === user.login){ %>
+                                    <button class="deletePost">Delete</button>
+                                <% } %>
+                            </div>
+                        </div>
+                <%    }); %>
+                <% } %>
+            </div>
+        </div>
+        <% if(!user.login || !user.id) { %>
+        <div>  
+            <div class="formRegistration">
+                <h2>Registration</h2>
+                <form>
+                    Login<input id="registrationLogin" type="text">
+                    Password<input id="registrationPassword" type="password">
+                    Confirm password<input id="registrationConfirmPassword" type="password">
+                    <div class="twoBtn">
+                        <button id="registrationSend">Submit</button>
+                        <button id="toLogin">To login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <div class="formLogin">
+                <h2>Login</h2>
+                <form>
+                    Login<input id="loginLogin" type="text">
+                    Password<input id="loginPassword" type="password">
+                    <div class="twoBtn">
+                        <button id="loginSend">Submit</button>
+                        <button id="toRegistration">To registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% } else {%>
+        <div>
+            <div class="controlPanel">
+                <h3>Control panel</h3>
+                <a href="/posts/add">Create post</a>
+                <a id="logout" href="/posts">Logout</a>
+            </div>
+        </div>
+         <% }%>
+    </main>
+    
+    <%- include('../layout/footer.ejs') %>
+</div>
+

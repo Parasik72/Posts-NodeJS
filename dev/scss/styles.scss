@@ -1,0 +1,31 @@
+$black: #000;
+$white: #fff;
+$red: #FF0000;
+$primaryColor: #FFF093;
+$secondaryColor: #d9ff9d;
+$backgroundColorBody: #DDF7FF;
+$backgroundColorMain: $white;
+$borderColor: rgba($color: $black, $alpha: 0.1);
+$boxShadowColor: $borderColor;
+
+@import 'clear';
+@import 'header';
+@import 'main';
+@import 'footer';
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: $backgroundColorBody;
+    #wrapperMain{
+        margin: 40px auto;
+        max-width: 1080px;
+        background-color: $backgroundColorMain;
+        border-radius: 30px;
+        box-shadow: 0 15px 20px $boxShadowColor;
+    }
+}
+
+@import 'add';
+@import 'comment';
+@import 'adaptive';
