@@ -25,15 +25,67 @@
             border: none;
             padding: 8px 10px;
             border-radius: 7px;
-            background-color: #FFF093;
+            background-color: $primaryColor;
             cursor: pointer;
             font-weight: 500;
             font-size: 16px;
             box-shadow: 0 5px 10px $boxShadowColor;
             transition: background-color 0.2s ease-in-out;
             &:hover{
-                background-color: darken($color: #FFF093, $amount: 15)
+                background-color: darken($color: $primaryColor, $amount: 15)
             }
+        }
+        #laddImgBtn{
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background-color: $secondaryColor;
+            padding: 8px 10px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 10px $boxShadowColor;
+            transition: background-color 0.2s ease-in-out;
+            width: 140px;
+            h4{
+                font-weight: 300;
+            }
+            input[type='file'] {
+                display: none;
+            }
+            &:hover{
+                background-color: darken($color: $secondaryColor, $amount: 15)
+            }
+            &::before{
+                content: '';
+                width: 22px;
+                height: 2px;
+                background-color: $grey;
+                position: absolute;
+                right: 5px;
+                border-radius: 2px;
+            }
+            &::after{
+                content: '';
+                width: 2px;
+                height: 22px;
+                background-color: $grey;
+                position: absolute;
+                right: 15px;
+                border-radius: 2px;
+            }
+        }
+        .uploadedImg{
+            display: flex;
+            img{
+                width: 100px;
+                &:not(:first-of-type){
+                    margin-left: 10px;
+                }
+            }
+        }
+        .uploadedImg.active{
+            margin-bottom: 15px;
         }
     }
 }

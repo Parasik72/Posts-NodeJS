@@ -12,6 +12,11 @@
                         <div class="post" id="<%= item._id%>">
                             <h3><a href="/posts/<%=item.owner.login %>/<%=item.url%>"><%= item.title %></a></h3>
                             <p><%=item.body %></p>
+                            <div class="postImgs">
+                                <% item.images.forEach(image => {%>
+                                    <img src="/uploads<%=image.path %>" alt="img">
+                                <%}) %>
+                            </div>
                             <div class="postBottom">
                                 <h5>Author: <a href="/posts/<%=item.owner.login %>"><%=item.owner.login %></a></h5>
                                 <% if(item.owner.login === user.login){ %>

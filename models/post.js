@@ -16,7 +16,11 @@ const post = mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         autopopulate: true
-    }
+    },
+    images: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Upload'
+    }]
 }
     ,
     {

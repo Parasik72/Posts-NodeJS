@@ -8,6 +8,11 @@
                 <div class="post" id="<%= post.id%>">
                     <h3><%= post.title %></h3>
                     <p><%=post.body %></p>
+                    <div class="postImgs">
+                        <% post.images.forEach(image => {%>
+                            <img src="/uploads<%=image.path %>" alt="img">
+                        <%}) %>
+                    </div>
                     <div class="postBottom">
                         <h5>Author: <a href="/posts/<%=post.owner.login %>"><%=post.owner.login %></a></h5>
                         <% if(post.owner.login === user.login){ %>

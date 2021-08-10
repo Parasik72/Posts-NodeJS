@@ -10,5 +10,6 @@ router.get('/:login/:post', Controller.post);
 
 router.post('/create', Controller.addPost);
 router.post('/delete', Controller.deletePost);
+router.post('/uploadImg', Controller.uploadImg);
 
 module.exports = router;

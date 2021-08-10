@@ -29,6 +29,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join("./", "public")));
+app.use('/uploads', express.static(path.join("./", config.DESTINATION)));
 app.use(
     "/javascripts",
     express.static(path.join("./", "node_modules", "jquery", "dist"))

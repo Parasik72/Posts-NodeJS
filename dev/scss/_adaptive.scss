@@ -28,6 +28,16 @@
                 margin-bottom: 15px;
             }
         }
+        .postImgs{
+            img{
+                width: 100% !important;
+            }
+        }
+        .controlPanel,
+        .formLogin,
+        .formRegistration{
+            width: 100% !important;
+        }
     }
 }
 

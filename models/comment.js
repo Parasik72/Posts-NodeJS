@@ -11,20 +11,11 @@ const comment = mongoose.Schema({
         required: true,
         ref: 'Post'
     },
-    // parent: {
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: 'Comment'
-    // },
     owner: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         autopopulate: true
     },
-    // children: [{
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: 'Comment',
-    //     autopopulate: true
-    // }],
     createdAt: {
         type: Date,
         default: Date.now
